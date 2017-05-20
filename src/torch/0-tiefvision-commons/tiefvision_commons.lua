@@ -76,13 +76,13 @@ end
 
 function tiefvision_commons.preprocess(im)
   local img_mean = tiefvision_commons.img_mean()
-  local scaledImage = im * 255
+  local scaledImage = image.scale(im,224,224,'bilinear')*255
   -- converts RGB to BGR
   local bgrImage = scaledImage:clone()
   bgrImage[{ 1, {}, {} }] = scaledImage[{ 3, {}, {} }]
   bgrImage[{ 3, {}, {} }] = scaledImage[{ 1, {}, {} }]
 
-  local imageMinusAvg = bgrImage - image.scale(img_mean, im:size()[2], im:size()[3], 'bilinear')
+  local imageMinusAvg = bgrImage - image.scale(img_mean, 224, 224, 'bilinear')
   return imageMinusAvg:cuda()
 end
 
