@@ -22,7 +22,7 @@ local tiefvision_commons = require '0-tiefvision-commons/tiefvision_commons'
 
 local proto_name = paths.thisfile('deploy.prototxt')
 local model_name = paths.thisfile('nin_imagenet.caffemodel')
-local image_name = paths.thisfile('Goldfish3.jpg');
+local image_name = paths.thisfile('Goldfish3.jpg')
 
 local net = loadcaffe.load(proto_name, model_name):cuda()
 net.modules[#net.modules] = nil -- remove the top softmax
@@ -39,12 +39,13 @@ local encoder = net:clone()
 for _ = 1, 9 do
   encoder:remove(21)
 end
+--print(encoder)
 local concat = nn.ConcatTable()
 concat:add(nn.SpatialMaxPooling(3, 3, 2, 2, 0, 0):ceil():cuda())
 concat:add(nn.SpatialMaxPooling(3, 3, 1, 1, 0, 0):ceil():cuda())
 encoder:add(concat)
 encoder:evaluate()
-print(encoder)
+--print(encoder)
 
 -- create classifier
 local classifier = net:clone()
@@ -56,6 +57,7 @@ local outputEnc = encoder:forward(im)
 local lossClassifier, outputClassifier = classifier:forward(outputEnc[1]):view(-1):float():sort(true)
 
 local outputSize = output:size()[1]
+--print(outputClassifier:size())
 assert(outputSize == 1000, 'Output size should be 1000')
 assert(torch.eq(outputClassifier, output), 'the output of the network should be the same as the output of the classifier using the encoder')
 
@@ -71,6 +73,7 @@ for i = 1, expectedOutput:size()[1] do
 end
 
 -- Test encoder reduction
+--print('76')
 local fakeIm = torch.Tensor(3, 224, 224):cuda()
 outputEnc = encoder:forward(fakeIm)
 assert(outputEnc[1]:size()[3] == 6, 'the encoder size for 224 input size should be 6')
