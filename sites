@@ -1,0 +1,14 @@
+nin_imagenet.caffemodel,syn
+https://gist.github.com/mavenlin/e56253735ef32c3c296d
+http://kakakazuma.hatenablog.com/entry/2015/08/21/192942
+https://github.com/BVLC/caffe/wiki/Model-Zoo
+ilsvrc_2012_mean.t7
+https://www.dropbox.com/s/p33rheie3xjx6eu/ilsvrc_2012_mean.t7
+https://github.com/szagoruyko/imagenet-validation.torch/blob/master/data/ilsvrc_2012_mean.t7
+scala
+http://www.jb51.net/os/Ubuntu/56388.html
+playframework
+http://developer.51cto.com/art/201202/319512.htm
+sbt
+http://www.scala-sbt.org/download.html
+
