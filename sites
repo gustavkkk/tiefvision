@@ -11,6 +11,12 @@ playframework
 http://developer.51cto.com/art/201202/319512.htm
 sbt
 http://www.scala-sbt.org/download.html
+http://stackoverflow.com/questions/36234193/cannot-build-sbt-project-due-to-launcher-version
+(curl -s https://raw.githubusercontent.com/paulp/sbt-extras/master/sbt > ~/bin/sbt \
+  && chmod 0755 ~/bin/sbt)
+activator run
+http://stackoverflow.com/questions/30616874/activator-command-not-found
+(sudo wget downloads.typesafe.com/typesafe-activator/1.3.4/typesafe-activator-1.3.4.zip)
 
 #download models
 https://www.dropbox.com/sh/ku2gakve25n51a9/AABTCcwCE2jVy08dezKgTx-8a?dl=0
