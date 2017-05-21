@@ -15,7 +15,7 @@ case "$1" in
     sudo docker build -t $DOCKER_IMAGE_NAME $ROOT/src/h2
 
     echo "Running container $DOCKER_IMAGE_NAME"
-    docker run \
+    sudo docker run \
       --detach \
       --name $DOCKER_SERVICE_NAME \
       --publish 8082:8082 \
