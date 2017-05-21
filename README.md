@@ -12,7 +12,7 @@ End-to-end deep learning image-similarity search engine.
 
 4.Modify service file(src/h2/service)
 
-5.
+5.something
 
 
 ## Reference
