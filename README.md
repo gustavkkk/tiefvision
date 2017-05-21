@@ -3,11 +3,11 @@
 End-to-end deep learning image-similarity search engine.
 
 # Step
-1.Download nin-..model related files...
-2.Modify io file(src/torch/0-common/io...
-3.Download and Install playframework, sbt, oracle-java-8, docker
-4.Modify service file(src/h2/service)
-5.
+# 1.Download nin-..model related files...
+# 2.Modify io file(src/torch/0-common/io...
+# 3.Download and Install playframework, sbt, oracle-java-8, docker
+# 4.Modify service file(src/h2/service)
+# 5.
 
 
 ## Reference
