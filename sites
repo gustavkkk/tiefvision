@@ -25,12 +25,26 @@ http://stackoverflow.com/questions/30616874/activator-command-not-found
 http://stackoverflow.com/questions/18578693/why-would-my-play-framework-say-wait-for-a-sbt-lock-to-be-available
 (sudo rm -rf /home/frank/.sbt/boot/sbt.boot.lock)
 
-docker(Cannot connect to the Docker daemon. Is the docker daemon running on this host?)
+[Cannot connect to the Docker daemon. Is the docker daemon running on this host?]
 http://stackoverflow.com/questions/21871479/docker-cant-connect-to-docker-daemon
 sudo usermod -aG docker $(whoami)
 $ sudo service docker stop
 $ sudo rm -rf /var/lib/docker
 $ sudo service docker start
+
+[org.jboss.netty.channel.ChannelException: Failed to bind to: /0.0.0.0:9000]
+http://stackoverflow.com/questions/31438125/play-framework-jboss-channel-exception
+lsof -i:9000
+kill -9 [PID]
+
+[SQLTimeoutException: Timeout after 1000ms of waiting for a connection.]
+https://github.com/paucarre/tiefvision/issues/57
+http://stackoverflow.com/questions/33737889/play-slick-sqltimeoutexception-timeout-after-1001ms-of-waiting-for-a-connection
+http://nilfigo.hatenablog.com/entry/2013/09/10/173552
+http://stackoverflow.com/questions/32545697/connecting-to-local-h2-database-in-play-framework
+(You have to run java command in last line of src/h2/Dockerfile)
+
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[SQLTimeoutException: Timeout after 1000ms of waiting for a connection.]
 
 #download models
 https://www.dropbox.com/sh/ku2gakve25n51a9/AABTCcwCE2jVy08dezKgTx-8a?dl=0
